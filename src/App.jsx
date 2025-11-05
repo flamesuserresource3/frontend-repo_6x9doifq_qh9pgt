@@ -1,28 +1,22 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import FeaturesSection from './components/FeaturesSection';
+import Integrations from './components/Integrations';
+import ContactCTA from './components/ContactCTA';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
+    <div className="min-h-screen w-full bg-[#0b0f16] antialiased">
+      <Hero />
+      <main>
+        <FeaturesSection />
+        <Integrations />
+        <ContactCTA />
+      </main>
+      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-white/50">
+        <p>
+          © {new Date().getFullYear()} Tee3Apps — Empowering commerce with 3D product intelligence.
         </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
